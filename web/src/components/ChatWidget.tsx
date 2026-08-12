@@ -31,7 +31,7 @@ export function ChatWidget() {
         body: JSON.stringify({ messages: nextMessages }),
       });
 
-      if (!res.body) throw new Error("No response body");
+      if (!res.ok || !res.body) throw new Error(`Request failed: ${res.status}`);
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
