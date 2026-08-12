@@ -1,0 +1,94 @@
+[
+  {
+    "id": "about-01",
+    "section": "about",
+    "title": "About Sandeep",
+    "text": "Sandeep is an AI/ML engineer focused on building AI agents. He is drawn to the pace of the field — he likes learning a new technique, using it to build something, and then doing it again the next day. Most of his projects start this way: he picks up a technique and finds an excuse to put it to work. He approaches his work in an organized way but stays flexible and adapts as things change, which happens often in this space. He is currently looking for full-time opportunities where he can build production-grade AI systems."
+  },
+  {
+    "id": "education-01",
+    "section": "education",
+    "title": "Education",
+    "text": "Sandeep holds an M.Sc. in Data Science from Monash University in Melbourne (2024–2026), which he completed with Distinction. He also holds a B.Tech in Information Technology from Manipal University, Jaipur (2020–2024), with a CGPA of 8.56."
+  },
+  {
+    "id": "publication-01",
+    "section": "publications",
+    "title": "Publication: AI in Solar Energy Processes",
+    "text": "Sandeep co-authored 'A Comprehensive Survey on Role of Artificial Intelligence in Solar Energy Processes,' a review paper examining how AI techniques are applied across solar energy processes. It was published at the 2022 IEEE 7th International Conference for Convergence in Technology (I2CT), co-authored with classmates and faculty during Sandeep's bachelor's degree. The paper began as a graded course report; the supervising professor encouraged the group to expand it, and it grew into a full review paper. DOI: 10.1109/I2CT54291.2022.9824314",
+    "url": "https://doi.org/10.1109/I2CT54291.2022.9824314"
+  },
+  {
+    "id": "project-fieldmedic",
+    "section": "projects",
+    "title": "FieldMedic — AI Clinical Decision Support System",
+    "text": "FieldMedic is a clinical decision support system Sandeep built that combines semantic retrieval with LLM reasoning to help with medical triage. It uses Sentence Transformers to embed and chunk over 300 medical knowledge documents, stores them in PostgreSQL with pgvector for semantic search, and retrieves the most relevant context for a given query. On top of retrieval, an agent pipeline combines the retrieved knowledge with LLM reasoning (Gemini) and a layer of safety rules to produce structured triage recommendations, rather than free-form, unconstrained output. The system is containerized with Docker Compose across three services and exposes four REST API endpoints. The safety rules are general triage safeguards and are not connected to any real hospital system. The project is not hosted or deployed live; the code is available on GitHub.",
+    "url": "https://github.com/SandeepKr24/FieldMedic"
+  },
+  {
+    "id": "project-smartgrid-finetuning",
+    "section": "projects",
+    "title": "LLM Fine-Tuning Pipeline for Smart Grid Incident Analysis",
+    "text": "This project fine-tunes LLaMA-2 using LoRA (via HuggingFace PEFT) on a large set of smart-grid incident records to classify outage types. It covers the full pipeline end-to-end: preprocessing and annotation of the incident data, training and evaluation with HuggingFace, and a FastAPI inference service deployed with vLLM for efficient serving. Sandeep built the project to apply and practice LLM fine-tuning techniques — parameter-efficient tuning, dataset preparation, and production-style deployment — on a real-world structured-data classification task outside the usual chatbot/text-generation use case. The repository is currently private. It's one of those things where it worked one day and then something stopped working the next; Sandeep is working on fixing it, but it's on his to-do list rather than at the top of it."
+  },
+  {
+    "id": "project-agentic-energy",
+    "section": "projects",
+    "title": "Agentic AI Workflow for Energy Consumption Analytics",
+    "text": "This project built a LangChain-based agent to query and analyze energy consumption datasets, using tool-calling pipelines to dynamically generate and execute SQL queries and detect anomalies in the data. It also automated sustainability reporting workflows that would otherwise require manual analysis. The repository is currently private — the agent started misbehaving, so Sandeep took it down rather than leave something broken up. He's working on fixing it, but it's on his to-do list rather than at the top of it."
+  },
+  {
+    "id": "project-mini-collection",
+    "section": "projects",
+    "title": "Mini Projects",
+    "text": "Alongside his larger projects, Sandeep has built several smaller ones as focused practice exercises. The Train Ticket Details Extractor pulls key details from train ticket photos or PDFs and saves them as structured JSON. The English-to-Hinglish Translator is a Python tool that translates between English and Hinglish in both directions. Photo Scraper downloads a specified number of images from Google Image Search based on a keyword. The Binary Image Classification Model is a binary image classifier built from scratch as a hands-on exercise in core ML fundamentals. All of these repositories are public on Sandeep's GitHub."
+  },
+  {
+    "id": "skills-programming",
+    "section": "skills",
+    "title": "Skills: Programming",
+    "text": "Sandeep's programming skills include Python and SQL."
+  },
+  {
+    "id": "skills-ml-llms",
+    "section": "skills",
+    "title": "Skills: Machine Learning & LLMs",
+    "text": "Sandeep's machine learning and LLM skills include Scikit-learn, TensorFlow, NLP, Transformers, LLM fine-tuning techniques such as LoRA, QLoRA, and PEFT, HuggingFace Transformers, and model evaluation using metrics like ROUGE and BLEU."
+  },
+  {
+    "id": "skills-genai",
+    "section": "skills",
+    "title": "Skills: Generative AI",
+    "text": "Sandeep's generative AI skills include LangChain, Langflow, LLMs, prompt engineering, GPT, RAG pipelines, agentic AI systems, and LLM tool-calling."
+  },
+  {
+    "id": "skills-data-engineering",
+    "section": "skills",
+    "title": "Skills: Data Engineering",
+    "text": "Sandeep's data engineering skills include Apache Spark and Databricks."
+  },
+  {
+    "id": "skills-infra-cicd",
+    "section": "skills",
+    "title": "Skills: Infrastructure / CI-CD",
+    "text": "Sandeep's infrastructure and CI/CD skills include AWS, Docker, Git, GitHub Actions, and Jenkins."
+  },
+  {
+    "id": "skills-backend-deployment",
+    "section": "skills",
+    "title": "Skills: Backend & Deployment",
+    "text": "Sandeep's backend and deployment skills include FastAPI, REST APIs, vLLM, and model inference optimization."
+  },
+  {
+    "id": "skills-databases-storage",
+    "section": "skills",
+    "title": "Skills: Databases & Storage",
+    "text": "Sandeep's database and storage skills include PostgreSQL, pgvector, Delta Lake, Iceberg, Qdrant, and Pinecone."
+  },
+  {
+    "id": "skills-analytics-bi",
+    "section": "skills",
+    "title": "Skills: Analytics & BI",
+    "text": "Sandeep's analytics and BI skills include Power BI, Tableau, and Microsoft Excel."
+  }
+]
