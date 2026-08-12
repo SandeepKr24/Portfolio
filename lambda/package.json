@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-chat-lambda",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RAG chat backend Lambda for Sandeep Kumar's portfolio site (Phase 3)",
+  "type": "module",
+  "main": "handler.mjs",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.116.0",
+    "@huggingface/transformers": "^4.2.0",
+    "pg": "^8.23.0"
+  }
+}
