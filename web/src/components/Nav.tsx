@@ -5,6 +5,7 @@ import { nav } from "@/content/site";
 
 export function Nav() {
   const [active, setActive] = useState<string>("");
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const sections = nav
@@ -53,17 +54,26 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-      <nav className="grid h-16 w-full grid-cols-[1fr_auto_1fr] items-center gap-4 px-8 text-sm">
-
-        <a href={`#${contactItem.id}`} className={linkClass(contactItem.id)}>
-          {contactItem.label}
-        </a>
+      <nav className="grid h-16 w-full grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 text-sm sm:px-8">
+        <div className="justify-self-start">
+          <a href={`#${contactItem.id}`} className={`hidden sm:inline ${linkClass(contactItem.id)}`}>
+            {contactItem.label}
+          </a>
+          <button
+            type="button"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            className="text-foreground sm:hidden"
+          >
+            {mobileOpen ? "✕" : "☰"}
+          </button>
+        </div>
 
         <a href="#" className="justify-self-center font-medium whitespace-nowrap">
           Sandeep Kumar
         </a>
 
-        <ul className="flex justify-end gap-4">
+        <ul className="hidden justify-end gap-4 sm:flex">
           {otherItems.map(({ id, label }) => (
             <li key={id}>
               <a href={`#${id}`} className={linkClass(id)}>
@@ -73,6 +83,24 @@ export function Nav() {
           ))}
         </ul>
       </nav>
+
+      {mobileOpen && (
+        <div className="border-t border-border sm:hidden">
+          <ul className="flex flex-col gap-4 px-6 py-4 text-sm">
+            {nav.map(({ id, label }) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  onClick={() => setMobileOpen(false)}
+                  className={linkClass(id)}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

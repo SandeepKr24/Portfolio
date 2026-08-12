@@ -17,29 +17,31 @@ export function ProjectCard({
 
       {expanded && <p className="mt-3 text-muted">{project.long}</p>}
 
-      <button
-        type="button"
-        onClick={() => setExpanded((prev) => !prev)}
-        className="mt-3 text-sm text-accent hover:underline"
-      >
-        {expanded ? "Show less" : "Read more"}
-      </button>
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          onClick={() => setExpanded((prev) => !prev)}
+          className="text-sm text-accent hover:underline"
+        >
+          {expanded ? "Show less" : "Read more"}
+        </button>
+
+        {project.githubUrl && (
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="border border-border px-4 py-2 text-sm hover:border-accent hover:text-accent"
+          >
+            View on GitHub
+          </a>
+        )}
+      </div>
 
       {project.status === "unavailable" && (
-        <p className="mt-4 text-sm text-muted italic">
+        <p className="mt-3 text-sm text-muted italic">
           Currently unavailable while I work on fixing unexpected problems.
         </p>
-      )}
-
-      {project.githubUrl && (
-        <a
-          href={project.githubUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-4 inline-block border border-border px-4 py-2 text-sm hover:border-accent hover:text-accent"
-        >
-          View on GitHub
-        </a>
       )}
     </div>
   );
