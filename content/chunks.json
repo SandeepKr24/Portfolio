@@ -19,6 +19,12 @@
     "url": "https://doi.org/10.1109/I2CT54291.2022.9824314"
   },
   {
+    "id": "project-overview",
+    "section": "projects",
+    "title": "Projects Overview",
+    "text": "Sandeep has built several AI/ML projects. His three flagship projects are FieldMedic, an AI clinical decision support system that uses RAG to help with medical triage; the LLM Fine-Tuning Pipeline for Smart Grid Incident Analysis, which fine-tunes LLaMA-2 with LoRA to classify power-outage types; and the Agentic AI Workflow for Energy Consumption Analytics, a LangChain-based agent that queries and analyzes energy usage data. Alongside these, he has built four smaller practice projects: a Train Ticket Details Extractor, an English-to-Hinglish Translator, a Photo Scraper, and a Binary Image Classification Model built from scratch."
+  },
+  {
     "id": "project-fieldmedic",
     "section": "projects",
     "title": "FieldMedic — AI Clinical Decision Support System",
