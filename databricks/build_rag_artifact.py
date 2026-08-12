@@ -1,4 +1,11 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "5"
+# dependencies = [
+#   "sentence-transformers",
+# ]
+# ///
 # MAGIC %md
 # MAGIC # Build RAG Artifact — Portfolio Chatbot
 # MAGIC
