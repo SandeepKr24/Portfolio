@@ -43,23 +43,29 @@ export function Nav() {
     };
   }, []);
 
+  const linkClass = (id: string) =>
+    active === id
+      ? "text-accent"
+      : "text-muted transition-colors hover:text-foreground";
+
+  const contactItem = nav.find(({ id }) => id === "contact")!;
+  const otherItems = nav.filter(({ id }) => id !== "contact");
+
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4 text-sm">
-        <a href="#" className="font-medium">
+      <nav className="mx-auto grid h-16 max-w-5xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 text-sm">
+        <a href={`#${contactItem.id}`} className={linkClass(contactItem.id)}>
+          {contactItem.label}
+        </a>
+
+        <a href="#" className="justify-self-center font-medium whitespace-nowrap">
           Sandeep Kumar
         </a>
-        <ul className="flex gap-5">
-          {nav.map(({ id, label }) => (
+
+        <ul className="flex justify-end gap-4">
+          {otherItems.map(({ id, label }) => (
             <li key={id}>
-              <a
-                href={`#${id}`}
-                className={
-                  active === id
-                    ? "text-accent"
-                    : "text-muted transition-colors hover:text-foreground"
-                }
-              >
+              <a href={`#${id}`} className={linkClass(id)}>
                 {label}
               </a>
             </li>
