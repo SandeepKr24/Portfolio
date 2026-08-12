@@ -53,7 +53,8 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-      <nav className="mx-auto grid h-16 max-w-5xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 text-sm">
+      <nav className="grid h-16 w-full grid-cols-[1fr_auto_1fr] items-center gap-4 px-8 text-sm">
+
         <a href={`#${contactItem.id}`} className={linkClass(contactItem.id)}>
           {contactItem.label}
         </a>
