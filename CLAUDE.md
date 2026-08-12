@@ -239,8 +239,13 @@ while I work on fixing unexpected problems."*
 - **Chunk voice**: write chunks in **third person** ("Sandeep is…"). The bot's voice
   is controlled by the system prompt, not the corpus. Third-person facts are easier
   for the model to reason over and re-voice.
-- **Embedding model**: `sentence-transformers/all-MiniLM-L6-v2` — free, no API key,
-  384 dimensions. Sufficient for a ~15-chunk corpus.
+- **Embedding model**: `sentence-transformers/multi-qa-MiniLM-L6-cos-v1` — free, no API
+  key, 384 dimensions. Chosen over `all-MiniLM-L6-v2` (the original pick) after that
+  model's retrieval on this corpus turned out weak: it's tuned for symmetric
+  sentence-similarity, not asymmetric query→passage retrieval, so short questions
+  scored poorly against longer descriptive chunks and topically-unrelated chunks with
+  overlapping vocabulary (e.g. "energy") outranked the right one. `multi-qa-MiniLM-L6-cos-v1`
+  is trained specifically for question→passage retrieval and is the same size/dimension.
 - **Chunk schema**: `id`, `section`, `title`, `text`, plus optional `url`.
 - **Artifact output**: JSON containing text + metadata + embeddings, portable to any
   vector store.

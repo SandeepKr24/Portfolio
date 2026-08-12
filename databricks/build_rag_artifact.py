@@ -9,7 +9,7 @@
 # MAGIC %md
 # MAGIC # Build RAG Artifact — Portfolio Chatbot
 # MAGIC
-# MAGIC Loads `content/chunks.json`, embeds each chunk with `sentence-transformers/all-MiniLM-L6-v2`,
+# MAGIC Loads `content/chunks.json`, embeds each chunk with `sentence-transformers/multi-qa-MiniLM-L6-cos-v1`,
 # MAGIC and writes a portable artifact (text + metadata + embeddings) to `content/rag_artifact.json`.
 # MAGIC
 # MAGIC Phase 1 of the build (see `CLAUDE.md`). The artifact is plain JSON so it can be loaded into
@@ -39,7 +39,7 @@ print(f"Loaded {len(chunks)} chunks from {CHUNKS_PATH}")
 
 # COMMAND ----------
 
-EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+EMBEDDING_MODEL = "sentence-transformers/multi-qa-MiniLM-L6-cos-v1"
 model = SentenceTransformer(EMBEDDING_MODEL)
 
 texts = [c["text"] for c in chunks]
